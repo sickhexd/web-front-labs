@@ -60,3 +60,21 @@ h1.h1style:hover{
     background-color: #ffffff30;
     box-shadow: 0 0 15px #00000030;
 }
+
+footer{
+    background-color: black;
+    color: lightgreen;
+    padding: 10px;
+    font-size: 16pt;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+
+}
+
+main{
+    margin: 10px 20px 45px;
+}
