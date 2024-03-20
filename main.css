@@ -8,6 +8,7 @@ body{
 a{
     color: green;
     text-decoration: none;
+    transition: 0.5s 0.2s;
 }
 
 
@@ -23,6 +24,7 @@ a:hover{
     color: red;
     text-decoration: underline;
     background-color: white;
+    transition: 0.3s;
 }
 
 a:active{
