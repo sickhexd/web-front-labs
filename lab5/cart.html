@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина товаров</title>
+    <script>
+        function showSum(){
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            let inputC = document.getElementById('numberC')
+            let inputD = document.getElementById('numberD')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputB.value);
+
+            let result = a*100+b*80+c*150+d*300;
+            
+            let output = document.getElementById('outputNum');
+            output.innerHTML = result;
+        }
+    </script>
+    <style>
+        .main{
+            border: 1px solid;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            margin: auto;
+            padding-bottom:30px;
+        }
+        .inputs{
+            margin: 10px;
+        }
+        .outputs{
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <div class="main">
+            <h1>Корзина товаров</h1>
+
+            <div class="inputs">
+                Яблоки (100р/шт): <br>
+                <input type="number" value="" id="numberA"><br>
+            </div>
+            <div class="inputs">
+                Груши (80р/шт): <br>
+                <input type="number" value="" id="numberB"><br>
+            </div>
+            <div class="inputs">
+                Апельсины (150р/шт): <br>
+                <input type="number" value="" id="numberC"><br>
+            </div>
+            <div class="inputs">
+                Дыни (300р/шт): <br>
+                <input type="number" value="" id="numberD"><br>
+            </div>
+            <input type="button" value="Рассчитать" onclick="showSum()">
+            <input type="button" value="Очистить" onclick="clear()">
+            <div class="outputs">
+                Общая цена: 
+                <output id="outputNum"></output>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
