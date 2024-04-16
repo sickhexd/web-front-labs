@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антонов Семен Андреевич. Лабораторная работа 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../favicon-32x32.png">
+    <script>
+        function showSum(){
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert("Сумма " + a + " и " + b + " равна: " + result);        
+        }
+        function showAuthor(){
+            let Author = 'Aвтор страницы: \nАнтонов Семен Андреевич';
+            alert(Author);
+        }
+        function changeOutput(buttonNum, backColor, textColor){
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка 1' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+        }
+    </script>
+    <style>
+        .message{
+            cursor: pointer;
+            display: inline-block;
+            border: 1px;
+            width: 200px;
+            height: 40px;
+            vertical-align: top;
+            text-align: center;
+            border-radius: 5px;
+            color: black;
+            background-color: white;
+            
+        }
+        .message:hover{
+            border: 1px solid black;
+
+        }
+        h1{
+            cursor: pointer;
+        }
+
+        #output{
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <label>Первое число: <input type="number" value="" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="" id="numberB"></label><br>
+
+        <h1 onclick="showAuthor()">Лабораторная работа 5</h1>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'blue', 'white')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'pink', 'purple')">
+        </div>
+
+        <div id="output"></div>
+
+    </main>
+    
+    <footer>
+        &copy; Антонов Семен, ФБИ-21, 2 курс, 2024
+    </footer>
+    
+
+</body>
+
+</html>
