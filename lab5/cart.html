@@ -22,6 +22,13 @@
             let output = document.getElementById('outputNum');
             output.innerHTML = result;
         }
+        function clearFields() {
+            document.getElementById('numberA').value = '';
+            document.getElementById('numberB').value = '';
+            document.getElementById('numberC').value = '';
+            document.getElementById('numberD').value = '';
+            document.getElementById('outputNum').innerHTML = '';
+        }
     </script>
     <style>
         .main{
@@ -48,22 +55,22 @@
 
             <div class="inputs">
                 Яблоки (100р/шт): <br>
-                <input type="number" value="" id="numberA"><br>
+                <input type="number" value="" placeholder="Кол-во яблок" id="numberA"><br>
             </div>
             <div class="inputs">
                 Груши (80р/шт): <br>
-                <input type="number" value="" id="numberB"><br>
+                <input type="number" value="" placeholder="Кол-во груш" id="numberB"><br>
             </div>
             <div class="inputs">
                 Апельсины (150р/шт): <br>
-                <input type="number" value="" id="numberC"><br>
+                <input type="number" value="" placeholder="Кол-во апельсинов" id="numberC"><br>
             </div>
             <div class="inputs">
                 Дыни (300р/шт): <br>
-                <input type="number" value="" id="numberD"><br>
+                <input type="number" value="" placeholder="Кол-во дынь" id="numberD"><br>
             </div>
-            <input type="button" value="Рассчитать" onclick="showSum()">
-            <input type="button" value="Очистить" onclick="clear()">
+            <input type="button" value="Рассчитать"  onclick="showSum()">
+            <input type="button" value="Очистить" onclick="clearFields()">
             <div class="outputs">
                 Общая цена: 
                 <output id="outputNum"></output>
