@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтры</title>
+    <script>
+        function blurChange(){
+            let value = document.getElementById("blurValue").value + "px";
+            document.getElementById('blurOutput').innerHTML = value;
+            document.getElementById('blurImage').style.filter = 'blur(' + value + ')';
+
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div>
+            Фильтр blur:
+            <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
+            <span id="blurOutput"></span>
+        </div>
+        <div><img style="width: 500px;" src="/phonepicutres-TA.webp" id="blurImage"></div>
+    </main>
+    
+</body>
+</html>
