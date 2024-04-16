@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина товаров</title>
+    <script>
+        function Hide(element) {
+            element.style.width = '0px';
+            element.style.height = '0px';
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const circles = document.querySelectorAll('.circle');
+            circles.forEach(circle => {
+                const randomX = Math.floor(Math.random() * 300);
+                const randomY = Math.floor(Math.random() * 300);
+                circle.style.left = `${randomX}px`;
+                circle.style.top = `${randomY}px`;
+            });
+        });
+        
+        function refresh() {
+            const circles = document.querySelectorAll('.circle');
+            circles.forEach(circle => {
+                circle.style.opacity = '1';
+                circle.style.width = '50px';
+                circle.style.height = '50px';
+        });
+    }
+
+    </script>
+    <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .refresh{
+            position: relative;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+    <main>
+        <div class="main">
+            <h1>Скрытие кругов</h1>
+            <input class="refresh" type="button" value="Обновить" onclick="refresh()">
+
+            <div class="circle" style="background-color: #FF6347;" onclick="Hide(this)">1</div>
+            <div class="circle" style="background-color: #4682B4;" onclick="Hide(this)">2</div>
+            <div class="circle" style="background-color: #32CD32;" onclick="Hide(this)">3</div>
+            <div class="circle" style="background-color: #FFD700;" onclick="Hide(this)">4</div>
+            <div class="circle" style="background-color: #FF69B4;" onclick="Hide(this)">5</div>
+            <div class="circle" style="background-color: #800080;" onclick="Hide(this)">6</div>
+            <div class="circle" style="background-color: #00FA9A;" onclick="Hide(this)">7</div>
+            <div class="circle" style="background-color: #FF4500;" onclick="Hide(this)">8</div>
+            <div class="circle" style="background-color: #1E90FF;" onclick="Hide(this)">9</div>
+            <div class="circle" style="background-color: #9ACD32;" onclick="Hide(this)">10</div>
+
+           
+        </div>
+    </main>
+    
+</body>
+</html>
