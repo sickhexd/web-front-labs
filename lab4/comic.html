@@ -11,40 +11,61 @@
     <link rel="stylesheet" href="../favicon-32x32.png">
     <style>
         .circle{
+            position: absolute;
+            width: 15px;
             height: 10px;
-            width: 20px;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid;
             border-radius: 50%;
+            top: 145px;
+            left: 130px;
+            transition: 1s;
         }
         .circle1{
-            height: 30px;
-            width: 60px;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid;
+            position: absolute;
+            width: 20px;
+            height: 15px;
             border-radius: 50%;
+            top: 140px;
+            left: 135px;
+            transition: 1s;
         }
         .circle2{
-            height: 50px;
-            width: 70px;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid;
+            position: absolute;
+            width: 25px;
+            height: 20px;
             border-radius: 50%;
+            top: 130px;
+            left: 145px;
+            transition: 0.5s;
         }
-        div.circle{
-            position: relative;
-            top: 550px;
-            left: 400px;
+        main:hover .circle{
+            box-shadow: 0 0 15px;
+            background-color: white;
+            border: 1px solid black;
+            transition: 0.5s;
         }
-        div.circle1{
-            position: relative;
-            top: 510px;
-            left: 410px;
+        .circle1:hover{
+            box-shadow: 0 0 15px;
+            position: absolute;
+            width: 20px;
+            height: 15px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50%;
+            top: 140px;
+            left: 135px;
+            transition: 0.5s;
         }
-        div.circle2{
-            position: relative;
-            top: 430px;
-            left: 440px;
+        .circle2:hover{
+            box-shadow: 0 0 15px;
+            position: absolute;
+            width: 25px;
+            height: 20px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50%;
+            top: 130px;
+            left: 145px;
+            transition: 1s;
         }
     </style>
 </head>
@@ -59,7 +80,7 @@
 
         <div class="circle1"></div>
         <div class="circle2"></div>
-        <img style="width: 60%; z-index:-4;" src="../images.png" alt="img">
+        <img style="width: 300px; z-index:-4;" src="../images.png" alt="img">
     </main>
 
     <footer>
