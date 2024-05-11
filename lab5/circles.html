@@ -9,6 +9,7 @@
         function Hide(element) {
             element.style.width = '0px';
             element.style.height = '0px';
+            element.style.opacity = '0'
         }
 
         document.addEventListener("DOMContentLoaded", function() {
@@ -45,9 +46,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
+            position: absolute;
             cursor: pointer;
             transition: 0.5s;
+            margin-top: 150px;
+            margin-left: 50px;
         }
     </style>
 
