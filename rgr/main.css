@@ -65,8 +65,36 @@
     align-items: center;
     padding: 10px;
 }
+.licenses a{
+    text-decoration: none;
+}
+.licenses a:hover{
+    text-decoration: underline;
+}
+
+.news{
+    margin-left: 170px;
+    margin-bottom: 10px;
+    
+}
 
 
+.contact{
+    margin-top: 20px;
+    width: 200px;
+}
+.contact p{
+    margin: 0;
+    
+    
+}
+.text_news{
+    margin-top: 10px;
+}
+
+.text_news p{
+    line-height: 1.3;
+}
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
