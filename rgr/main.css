@@ -49,6 +49,24 @@
     
 }
 
+.img_info1 img{
+    align-items: center;
+    display: inline;
+    
+}
+
+.licenses {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
