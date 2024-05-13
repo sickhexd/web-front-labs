@@ -20,16 +20,16 @@
             let userNumber = parseInt(input.value);
             let message = document.getElementById('result');
 
-            // Проверка, что поле ввода не пустое и содержит число
+            
             if (input.value.trim() === "" || isNaN(userNumber)) {
                 message.innerHTML = 'Пожалуйста, введите число.';
-                return; // Возвращаемся из функции, чтобы не продолжать дальше
+                return; 
             }
 
-            // Увеличиваем счетчик попыток только если ввод корректен
+            
             count++;
 
-            // Проверка, что число в диапазоне от 1 до 100
+            
             if (userNumber < 1 || userNumber > 100) {
                 message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
                 return; // Возвращаемся из функции, чтобы не продолжать дальше
@@ -54,9 +54,23 @@
             screens[2].style.display = 'none';
             screens[0].style.display = 'block';
             count = 0; // Сброс количества попыток
-            document.getElementById('user-number').value = ''; // Сброс введённого числа
-            document.getElementById('result').innerHTML = ''; // Сброс результата
+            document.getElementById('user-number').value = '';
+            document.getElementById('result').innerHTML = ''; 
         }
+
+        function Ruless() {
+            let rules = document.getElementById("rules");
+            let button = document.getElementById("rules-btn");
+            
+            if (rules.style.display === "none") {
+                rules.style.display = "block";
+                button.textContent = "Скрыть правила игры";
+            } else {
+                rules.style.display = "none";
+                button.textContent = "Показать правила игры";
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -85,6 +99,18 @@
             </div>
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+        <div class="help">
+            <button id="rules-btn" onclick="Ruless()">Показать правила игры</button>
+            <div id="rules" style="display: none;">
+                <ul style="text-align: left; padding-left: 20px;">
+                    <li>1. Введите число в поле и нажмите 'Угадать'.</li>
+                    <li>2. Число должно быть в диапазоне от 1 до 100.</li>
+                    <li>3. Если ваше число больше задуманного, будет подсказка, что нужно меньше.</li>
+                    <li>4. Если ваше число меньше задуманного, будет подсказка, что
+                    <li>5. Игра продолжается до тех пор, пока вы не угадаете число.</li>
+                </ul>
             </div>
         </div>
     </main>

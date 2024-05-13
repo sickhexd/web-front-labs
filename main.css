@@ -162,4 +162,24 @@ main{
     align-items: center; /* Выравнивание контента по горизонтали */
 }
 
+.help {
+    background-color: #16a085;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    width: 300px;
+    text-align: center;
+    color: white;
+}
+
+.help ul {
+    list-style: none; /* Убираем стандартные маркеры списка */
+}
+
+.help li {
+    padding: 5px 0; /* Небольшой отступ между элементами списка */
+}
+
+
 
