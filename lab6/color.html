@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антонов Семен Андреевич. Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../favicon-32x32.png">
+    <script>
+        function changeColor(div){
+            if (div.style.backgroundColor == 'yellow'){
+                div.style.backgroundColor = 'red';
+                div.style.color = 'black'
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red'){
+                div.style.backgroundColor = 'black'
+                div.style.color = 'white'
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else if (div.style.backgroundColor == 'black'){
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'white'
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else if (div.style.backgroundColor == 'blue'){
+                div.style.backgroundColor = 'green';
+                div.style.color = 'white'
+                document.getElementById('color-name').innerHTML = 'зеленый';
+            }
+            else{
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'black'
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
+                
+            
+        
+    </script>
+</head>
+<body>
+    
+    <main>
+        <div class="color" style="cursor: pointer ; user-select: none;" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">желтый</span><br>
+            Сделайте двойной щелчек, чтобы сменить.
+        </div>
+    </main>
+
+    
+    
+</body>
+</html>

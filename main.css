@@ -149,17 +149,17 @@ main{
 }
 
 .game {
-    background-color: #1abc9c; /* Цвет фона блоков */
-    border-radius: 20px; /* Закругленные углы */
+    background-color: #1abc9c; 
+    border-radius: 20px; 
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Тень блока */
-    width: 300px; /* Фиксированная ширина для всех блоков */
-    margin: 10px auto; /* Автоматические отступы для центрирования */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    width: 300px; 
+    margin: 10px auto; 
     text-align: center;
-    display: flex; /* Добавлено для обеспечения выравнивания внутри .game */
-    flex-direction: column; /* Элементы внутри .game выравниваются вертикально */
-    justify-content: center; /* Выравнивание контента по вертикали */
-    align-items: center; /* Выравнивание контента по горизонтали */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .help {
@@ -174,11 +174,22 @@ main{
 }
 
 .help ul {
-    list-style: none; /* Убираем стандартные маркеры списка */
+    list-style: none; 
 }
 
 .help li {
-    padding: 5px 0; /* Небольшой отступ между элементами списка */
+    padding: 5px 0; 
+}
+
+.color{
+    border: 1px solid black;
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    padding-top: 15px;
+    background-color: yellow;
+    color: black;
+    transition: 0.5s;
 }
 
 
