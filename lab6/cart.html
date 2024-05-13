@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антонов Семен Андреевич. Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../favicon-32x32.png">
+    <script>
+        function calculate() {
+            let balance = parseInt(document.getElementById('balance').value) || 0;
+            let result = document.getElementById('result');
+
+            let prices = [90, 50, 150, 200, 120, 250, 300];
+            let total = 0;
+
+            for (let i = 1; i <= 7; i++) {
+                let quantity = parseInt(document.getElementById('number' + i).value) || 0;
+                total += prices[i - 1] * quantity;
+            }
+
+
+            
+            if (total > balance) {
+                result.textContent = "Недостаточно средств. Ваш баланс: " + balance + " р, необходимо: " + total + " р.";
+            } else {
+                result.textContent = "Покупка успешно совершена. Остаток на балансе: " + (balance - total) + " р.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div class="cart">
+            <div class="balance_laber" style="color: black;">
+                Мой баланс:
+                <input id="balance" value=""><br>
+            </div>
+    
+            <table>
+                <tr>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                </tr>
+                <tr><td>Молоко</td><td>90 р</td><td><input type="number" id="number1"></td></tr>
+                <tr><td>Хлеб</td><td>50 р</td><td><input type="number" id="number2"></td></tr>
+                <tr><td>Масло</td><td>150 р</td><td><input type="number" id="number3"></td></tr>
+                <tr><td>Сыр</td><td>200 р</td><td><input type="number" id="number4"></td></tr>
+                <tr><td>Яйца</td><td>120 р</td><td><input type="number" id="number5"></td></tr>
+                <tr><td>Курица</td><td>250 р</td><td><input type="number" id="number6"></td></tr>
+                <tr><td>Чай</td><td>300 р</td><td><input type="number" id="number7"></td></tr>
+            </table>
+            <button class="balance_laber" onclick="calculate()">OK</button>
+            <div style="color: black;" class="balance_laber" id="result"></div>
+
+        </div>
+        
+    </main>
+</body>
+</html>

@@ -159,7 +159,8 @@ main{
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
+     
 }
 
 .help {
@@ -171,6 +172,7 @@ main{
     width: 300px;
     text-align: center;
     color: white;
+    
 }
 
 .help ul {
@@ -197,6 +199,44 @@ main{
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     width: 300px; 
+    margin: 10px auto; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+
+}
+.balance_laber{
+    margin: 10px auto; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+
+table {
+    margin: 10px auto; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    border-collapse: collapse; /* Убираем двойные линии */
+    color: black;
+}
+th, td {
+    border: 1px solid black; /* Черные границы для всех ячеек */
+    padding: 8px;
+    text-align: center;
+}
+.cart{
+    background-color: #adf1e4;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    width: 400px; 
     margin: 10px auto; 
     text-align: center;
     display: flex; 
