@@ -192,5 +192,18 @@ main{
     transition: 0.5s;
 }
 
+.filter{
+    background-color: #adf1e4;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    width: 300px; 
+    margin: 10px auto; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+
+}
 
 
