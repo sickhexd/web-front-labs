@@ -147,3 +147,19 @@ main{
     border-radius: 30px;
     margin: 10px;
 }
+
+.game {
+    background-color: #1abc9c; /* Цвет фона блоков */
+    border-radius: 20px; /* Закругленные углы */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Тень блока */
+    width: 300px; /* Фиксированная ширина для всех блоков */
+    margin: 10px auto; /* Автоматические отступы для центрирования */
+    text-align: center;
+    display: flex; /* Добавлено для обеспечения выравнивания внутри .game */
+    flex-direction: column; /* Элементы внутри .game выравниваются вертикально */
+    justify-content: center; /* Выравнивание контента по вертикали */
+    align-items: center; /* Выравнивание контента по горизонтали */
+}
+
+

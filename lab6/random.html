@@ -1,51 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
     <title>Игра</title>
     <script>
         let number;
         let count = 0;
-        function startGame(){
-            number = Math.floor(Math.random()*100)+1;
+        function startGame() {
+            number = Math.floor(Math.random() * 100) + 1;
             let screens = document.getElementsByClassName("game");
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
         }
-        function guess(){
-            count++;
+        function guess() {
             let input = document.getElementById('user-number');
             let userNumber = parseInt(input.value);
             let message = document.getElementById('result');
-            if(userNumber > number){
-                message.innerHTML = 'Вы ввели слишком большое число'
+
+            // Проверка, что поле ввода не пустое и содержит число
+            if (input.value.trim() === "" || isNaN(userNumber)) {
+                message.innerHTML = 'Пожалуйста, введите число.';
+                return; // Возвращаемся из функции, чтобы не продолжать дальше
             }
-            else if (userNumber < number){
-                message.innerHTML = "Вы ввели слишком маленькое число"
+
+            // Увеличиваем счетчик попыток только если ввод корректен
+            count++;
+
+            // Проверка, что число в диапазоне от 1 до 100
+            if (userNumber < 1 || userNumber > 100) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+                return; // Возвращаемся из функции, чтобы не продолжать дальше
             }
-            else { 
+
+            if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            } else if (userNumber < number) {
+                message.innerHTML = "Вы ввели слишком маленькое число";
+            } else {
                 let screens = document.getElementsByClassName("game");
-                screens[0].style.display = 'none';
-                screens[1].style.display = 'block';
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
                 document.getElementById("number").innerHTML = number;
                 document.getElementById("try-count").innerHTML = count;
             }
-        function again(params){
-
         }
 
 
+        function again() {
+            let screens = document.getElementsByClassName("game");
+            screens[2].style.display = 'none';
+            screens[0].style.display = 'block';
+            count = 0; // Сброс количества попыток
+            document.getElementById('user-number').value = ''; // Сброс введённого числа
+            document.getElementById('result').innerHTML = ''; // Сброс результата
         }
     </script>
 </head>
 <body>
     <main>
         <div class="game">
-            <button>
-                Сыграть в игру
-            </button>
+            <button onclick="startGame()">Сыграть в игру</button>
         </div>
 
         <div class="game" style="display: none;">
@@ -59,7 +76,7 @@
         </div>
 
         <div class="game" style="display: none;">
-            <h1>Поздравляем, вы выйграли!</h1>
+            <h1>Поздравляем, вы выиграли!</h1>
             <div>
                 Задуманное число: <span id="number"></span>
             </div>
