@@ -11,18 +11,29 @@
     <link rel="stylesheet" href="../favicon-32x32.png">
     <script>
         function addNewBlock(){
-            let newBlock = document.createElement('div');
-            newBlock.style.backgroundColor = 'green';
-            newBlock.style.height = '40px';
+            let main = document.querySelector('main');
+            let input = document.querySelector('input[id="number"]');
+            let numBlocks = input.value;
 
-            document.querySelector('main').appendChild(newBlock);
+            for (let i = 0; i < numBlocks; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.border = '1px solid black';
+                newBlock.style.color = 'white';
+                newBlock.style.margin = "10px";
+                newBlock.style.width = `${150 + i * 50}px`; // увеличиваем ширину блока на 50px с каждым новым блоком
 
+                newBlock.innerText = 'Блок №' + (i+1) +': 2*' + i +"^2" + '= '+(2 * i**2) ;
+
+                main.appendChild(newBlock);
+            }
         }
-
     </script>
 </head>
 <body>
     <main>
+        <input id="number" placeholder="Введите количество блоков">
         <button onclick="addNewBlock()">Добавить блок</button>
     </main>
 </body>
