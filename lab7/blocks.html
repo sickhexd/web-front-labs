@@ -22,10 +22,46 @@
                 newBlock.style.border = '1px solid black';
                 newBlock.style.color = 'white';
                 newBlock.style.margin = "10px";
-                newBlock.style.width = `${150 + i * 50}px`; // увеличиваем ширину блока на 50px с каждым новым блоком
-
+                newBlock.style.width = `${150 + i * 50}px`; 
                 newBlock.innerText = 'Блок №' + (i+1) +': 2*' + i +"^2" + '= '+(2 * i**2) ;
+                main.appendChild(newBlock);
+            }
+        }
 
+        function add20_50(){
+            let main = document.querySelector('main');
+            for (let i = 20; i<=50; i+=2.5 ){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'blue';
+                newBlock.style.height = '30px';
+                newBlock.style.border = '1px solid black';
+                newBlock.style.color = 'white';
+                newBlock.style.margin = "10px";
+                newBlock.style.width = "100px"
+                newBlock.style.textAlign = "center"
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+            }
+        }
+
+        function add10_80(){
+            let main = document.querySelector('main');
+            for (let i = 10; i>=-80; i-=3){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'blue';
+                main.style.overflow = "hidden";
+                newBlock.style.border = '1px solid black';
+                newBlock.style.borderRadius = "100px"
+                newBlock.style.color = 'white';
+                newBlock.style.margin = "50px";
+                newBlock.style.width = "40px"
+                newBlock.style.height = "40px"
+                newBlock.style.textAlign = "center";
+                
+                
+                newBlock.innerHTML = `${i}`;
+                newBlock.style.float = "left";
+                
                 main.appendChild(newBlock);
             }
         }
@@ -35,6 +71,8 @@
     <main>
         <input id="number" placeholder="Введите количество блоков">
         <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="add20_50()">20 => 50</button>
+        <button onclick="add10_80()">10 => -80</button><br>
     </main>
 </body>
 </html>
