@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антонов Семен Андреевич. Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+<script>
+    function showExchange(){
+        const dates = [
+            '27.05.2024', '24.05.2024', '23.05.2024', '22.05.2024', '21.05.2024', 
+            '20.05.2024', '17.05.2024', '16.05.2024', '15.05.2024'
+        ];
+
+        const values = [
+            4100.00, 4168.20, 4251.80, 4250.00, 4153.00,
+            4184.00, 4300.00, 4398.40, 4398.40
+        ];
+
+        let table = document.getElementById('course-table');
+        let max = Math.max(...values);
+        let min = Math.min(...values);
+        let sum = 0;
+        
+        for(let i = 0; i < values.length; i++){
+            let tr = document.createElement('tr');
+            let dateTd = document.createElement('td');
+            let valueTd = document.createElement('td');
+            let diffTd = document.createElement('td');
+
+            dateTd.innerText = dates[i];
+            valueTd.innerText = values[i].toFixed(2);
+
+            let diff = i > 0 ? (values[i] - values[i - 1]).toFixed(2) : '0.00';
+            diffTd.innerText = diff;
+
+            tr.appendChild(dateTd);
+            tr.appendChild(valueTd);
+            tr.appendChild(diffTd);
+            table.appendChild(tr);
+
+            sum += values[i];
+        }
+
+        let average = (sum / values.length).toFixed(2);
+        document.getElementById('detail').innerHTML = 'Среднее значение: ' + average + "<br>" +
+        'Минимальное значение: ' + min + '<br>' + 'Максимальное значение: ' + max;
+        document.getElementById('butt').style.display = 'none';
+    }
+</script>
+</head>
+<body>
+    <main>
+        <button onclick="showExchange()" id="butt">Курс Яндекс</button>
+        <table border="1" id="course-table">
+            
+
+        </table>
+        <div id="detail"></div>
+    </main>
+</body>
+</html>
