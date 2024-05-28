@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <style>
+        .info-box {
+            border: 2px solid #000;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+        .info-box div {
+            margin-bottom: 10px;
+            color: black;
+        }
+        .info-box a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+    <script>
+        function getEuro(){
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(json){
+                    const exchangeInfo = document.getElementById('info');
+                    const difference = json.Valute.EUR.Value - json.Valute.EUR.Previous;
+                    const change = difference > 0 ? "поднялся" : "опустился";
+                    exchangeInfo.innerHTML = `<div class="info-box">
+                        <div class="value">Текущий курс Евро: ${json.Valute.EUR.Value} руб.</div>
+                        <div class="date">Дата запроса: ${json.Date.substring(0, 10)}</div>
+                        <div class="value">Курс за прошлую дату: ${json.Valute.EUR.Previous} руб.</div>
+                        <div class="difference">Курс евро ${change} на ${Math.abs(difference).toFixed(2)} руб. по сравнению с предыдущим днём.</div>
+                        <div class="source-link"><a href="https://www.cbr-xml-daily.ru/">Источник данных</a></div>
+                    </div>`;
+                })
+        }
+    </script>
+</head>
+<body>
+    
+
+    <main>
+        <button id="exchange" onclick="getEuro()">Курс Евро</button>
+        <div id="info"></div>
+    </main>
+
+    
+</body>
+</html>
