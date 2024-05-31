@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тигранян Артём Паруйрович. Лабораторная 8.</title>
+    <script src="lab8.js"></script>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <style>
+        .date{
+            color: black;
+            margin-top: 30px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+            width: 700px;
+        }
+
+        .moredate{
+            color: black;
+            margin-top: 30px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+            width: 250px;
+        }
+        .input-frame{
+            color: black;
+            margin-top: 30px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+            width: 300px;
+        }
+    </style>
+</head>
+<body onload="showMoreDate(); showDate()">
+   
+
+    <main>
+        <div id="current-date" class="date"></div>
+        <div id="more-date" class="moredate"></div>
+        <div class="input-frame">
+            <div class="input-group">
+                <label for="day">День: </label>
+                <input type="number" id="day" min="1" max="31">
+            </div>
+            <div class="input-group">
+                <label for="month">Месяц: </label>
+                <input type="number" id="month" min="1" max="12">
+            </div>
+            <div class="input-group">
+                <label for="year">Год: </label>
+                <input type="number" id="year">
+            </div>
+            <button onclick="showDayOfWeek()">День недели</button>
+            <div id="day-of-week"></div>
+        </div>
+        
+    </main>
+
+    <footer>
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
