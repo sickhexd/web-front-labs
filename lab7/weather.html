@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <script>
+        function getWeather(){
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const weather = document.getElementById('info');
+                    const temperatures = json.hourly.temperature_2m;
+
+                    weather.innerHTML = `
+                        <div>Сегодня в 08:00: ${temperatures[8]}°C</div>
+                        <div>Сегодня в 12:00: ${temperatures[12]}°C</div>
+                        <div>Сегодня в 20:00: ${temperatures[20]}°C</div>
+                    `;
+                })
+        }
+    </script>
+</head>
+<body>
+
+
+    <main>
+        <button id="weather" onclick="getWeather()">Прогноз погоды</button>
+        <div id="info"></div>
+    </main>
+
+    <footer>
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
