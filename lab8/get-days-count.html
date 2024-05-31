@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тигранян Артём Паруйрович. Лабораторная 8.</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="get-days-count.js"></script>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <style>
+        .frame{
+            background-color: aliceblue;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 8
+    </header>
+
+    <main>
+        <div class="frame">
+            <div>
+                <label>Дата рождения: <input type="date"></label>
+            </div>
+            <div>
+                <button onclick="showDayCount()">Показать число дней</button>
+                <button onclick="clearFields()">Очистить</button>
+            </div>
+    
+            <div id="answer"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
