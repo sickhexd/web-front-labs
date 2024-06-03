@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антонов Семен Андреевич. Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../favicon-32x32.png">
+    <script> 
+        function filter(){
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if (color == "Красный" && type == "Футболка"){
+                wear.src = "1.jpg";
+            }
+            else if (color == "Белый" && type == "Футболка"){
+                wear.src = "2.jpg"
+            }
+            else if (color == "Черный" && type == "Футболка"){
+                wear.src = "3.jpg"
+            }
+            else if (color == "Красный" && type == "Поло"){
+                wear.src = "4.jpg"
+            }
+            else if (color == "Белый" && type == "Поло"){
+                wear.src = "5.jpg"
+            }
+            else if (color == "Черный" && type == "Поло"){
+                wear.src = "6.jpg"
+            }
+            else if (color == "Красный" && type == "Майка"){
+                wear.src = "7.jpg"
+            }
+            else if (color == "Белый" && type == "Майка"){
+                wear.src = "8.jpg"
+            }
+            else if (color == "Черный" && type == "Майка"){
+                wear.src = "9.jpg"
+            }
+            
+        }  
+        
+    </script>
+</head>
+<body>
+    
+    <main>
+        <div class="filter">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">OK</button><br>
+            <img style="width: 300px;" id="wear">
+        </div>
+        
+    </main>
+
+    
+    
+</body>
+</html>
