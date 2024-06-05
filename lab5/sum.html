@@ -10,23 +10,46 @@
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="stylesheet" href="../favicon-32x32.png">
     <script>
-        function showSum(){
-            let inputA = document.getElementById('numberA');
-            let inputB = document.getElementById('numberB');
-            let a = parseInt(inputA.value);
-            let b = parseInt(inputB.value);
-            let result = a + b;
-            alert("Сумма " + a + " и " + b + " равна: " + result);        
+        function showSum() {
+            const numberA = document.getElementById('numberA').value;
+            const numberB = document.getElementById('numberB').value;
+            const sum = parseFloat(numberA) + parseFloat(numberB);
+            document.getElementById('output').textContent = `Сумма чисел: ${sum}`;
         }
-        function showAuthor(){
-            let Author = 'Aвтор страницы: \nАнтонов Семен Андреевич';
-            alert(Author);
+
+        function showDifference() {
+            const numberA = document.getElementById('numberA').value;
+            const numberB = document.getElementById('numberB').value;
+            const difference = parseFloat(numberA) - parseFloat(numberB);
+            document.getElementById('output').textContent = `Разность чисел: ${difference}`;
         }
-        function changeOutput(buttonNum, backColor, textColor){
-            let output = document.getElementById('output');
-            output.innerHTML = 'Нажата кнопка 1' + buttonNum;
-            output.style.backgroundColor = backColor;
-            output.style.color = textColor;
+
+        function showProduct() {
+            const numberA = document.getElementById('numberA').value;
+            const numberB = document.getElementById('numberB').value;
+            const product = parseFloat(numberA) * parseFloat(numberB);
+            document.getElementById('output').textContent = `Произведение чисел: ${product}`;
+        }
+
+        function showQuotient() {
+            const numberA = document.getElementById('numberA').value;
+            const numberB = document.getElementById('numberB').value;
+            const quotient = parseFloat(numberA) / parseFloat(numberB);
+            document.getElementById('output').textContent = `Частное чисел: ${quotient}`;
+        }
+
+        function showAuthor() {
+            document.getElementById('output').textContent = 'Автор страницы: Антонов Семен, ФБИ-21, 2 курс, 2024';
+        }
+
+        function showWelcome() {
+            document.getElementById('output').textContent = 'Добро пожаловать на страницу!';
+        }
+
+        function changeOutput(buttonNumber, textColor, backgroundColor) {
+            document.getElementById('output').style.color = textColor;
+            document.getElementById('output').style.backgroundColor = backgroundColor;
+            document.getElementById('output').textContent = `Нажата кнопка ${buttonNumber}`;
         }
     </script>
     <style>
@@ -41,6 +64,7 @@
             border-radius: 5px;
             color: black;
             background-color: white;
+            margin-bottom: 5px;
             
         }
         .message:hover{
@@ -62,13 +86,18 @@
 <body>
 
     <main>
+        <header>
+            <h1 onclick="showWelcome()">Лабораторная работа 5</h1>
+        </header>
+
         <label>Первое число: <input type="number" value="" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="" id="numberB"></label><br>
 
-        <h1 onclick="showAuthor()">Лабораторная работа 5</h1>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showDifference()">Найти разность чисел</div>
+        <div class="message" onclick="showProduct()">Найти произведение чисел</div>
+        <div class="message" onclick="showQuotient()">Найти частное чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
-
 
         <div>
             <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow')">
@@ -81,7 +110,7 @@
 
     </main>
     
-    <footer>
+    <footer ondblclick="showAuthor()">
         &copy; Антонов Семен, ФБИ-21, 2 курс, 2024
     </footer>
     
