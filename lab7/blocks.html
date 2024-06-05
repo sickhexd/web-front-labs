@@ -12,7 +12,7 @@
     <script>
         function addNewBlock(){
             let main = document.querySelector('main');
-            let input = document.querySelector('input[id="number"]');
+            let input = document.querySelector('input[id="input"]');
             let numBlocks = input.value;
 
             for (let i = 0; i < numBlocks; i++){
@@ -86,32 +86,57 @@
                 main.appendChild(newBlock);
             }
         }
-            function tenblocks(){
-                let main = document.querySelector('main');
-                for (let i = 0; i <= 10; i++) {
-                    let newBlockopacity = document.createElement('div');
-                    newBlockopacity.style.backgroundColor = "green";
-                    newBlockopacity.style.height = "40px";
-                    newBlockopacity.style.width = "40px";
-                    newBlockopacity.style.border = "3px solid "; 
-                    newBlockopacity.style.margin = "10px"; 
-                    newBlockopacity.style.padding = "5px"; 
-                    newBlockopacity.style.opacity = i * 0.1;
-                    newBlockopacity.innerText = i;
-                    main.appendChild(newBlockopacity);
-                }
+        function tenblocks(){
+            let main = document.querySelector('main');
+            for (let i = 0; i <= 10; i++) {
+                let newBlockopacity = document.createElement('div');
+                newBlockopacity.style.backgroundColor = "green";
+                newBlockopacity.style.height = "40px";
+                newBlockopacity.style.width = "40px";
+                newBlockopacity.style.border = "3px solid "; 
+                newBlockopacity.style.margin = "10px"; 
+                newBlockopacity.style.padding = "5px"; 
+                newBlockopacity.style.opacity = i * 0.1;
+                newBlockopacity.innerText = i;
+                main.appendChild(newBlockopacity);
             }
-
+        }
+            
+        function Circles(){
+            let main = document.querySelector('main');
+            const count = parseInt(document.getElementById('input').value);
+            for (let i = count; i > 0; i--) {
+                let newCircle = document.createElement('div');
+                newCircle.style.height = "20px";
+                newCircle.style.border = "3px solid";
+                newCircle.style.borderRadius = "100%"; 
+                newCircle.style.margin = "15px"; 
+                newCircle.style.padding = "5px"; 
+                newCircle.style.width = "20px";
+                newCircle.style.color = "white";
+                newCircle.style.display = "inline-block";
+                newCircle.style.textAlign = "center";
+                newCircle.innerText = i;
+                if(i % 2 === 0) {
+                    newCircle.style.backgroundColor = "red";
+                }
+                else {
+                    newCircle.style.backgroundColor = "green"
+                }
+                main.appendChild(newCircle);
+            }
+        }
     </script>
 </head>
 <body>
     <main>
-        <input id="number" placeholder="Введите количество блоков">
+        <input id="input" placeholder="Введите количество блоков">
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_80()">10 => -80</button><br>
         <button onclick="createBubbles()">Прозрачные шары</button><br>
-        <button onclick="tenblocks()">10 блоков</button>
+        <button onclick="tenblocks()">10 блоков</button><br>
+        <button onclick="Circles()">Красно-зеленые шары</button><br>
     </main>
 </body>
 </html>
